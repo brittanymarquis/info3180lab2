@@ -13,6 +13,18 @@ from flask import render_template, request, redirect, url_for, flash
 # Routing for your application.
 ###
 
+#!/usr/bin/python 
+import datetime 
+now = datetime.datetime.now() # today's date
+date_joined = datetime.date(2018, 2, 7) # a specific date 
+## Only month and year date representation
+print "Joined "  + date_joined.strftime("%B, %Y") 
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html', name="Marquita Marquis")
+
+
 @app.route('/')
 def home():
     """Render website's home page."""
@@ -22,7 +34,7 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Marquita Marquis")
 
 
 ###
